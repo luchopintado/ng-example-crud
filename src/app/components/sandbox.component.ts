@@ -60,7 +60,6 @@ export class SandboxComponent {
 
     constructor (public dataService: DataService) {
         this.dataService.getUsers().subscribe(users => {
-            console.log(users);
             this.users = users;
         });
     }
@@ -86,9 +85,7 @@ export class SandboxComponent {
     }
 
     onDelete (id) {
-        console.log('on delete', id);
         this.dataService.deleteUser(id).subscribe(res => {
-            console.log(res);
             for (let i = 0; i < this.users.length; i++) {
                 if (this.users[i].id === id) {
                     this.users.splice(i, 1);
