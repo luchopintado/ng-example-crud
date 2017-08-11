@@ -13,43 +13,41 @@ const emptyUser = {
     // tslint:disable-next-line:component-selector
     selector: 'sandbox',
     template: `
-        <div class="container">
-            <div class="col-12">
-                <h1>Observable and http requests</h1>
-                <br />
+        <div class="col-12">
+            <h1>Observable and http requests</h1>
+            <br />
 
-                <form (submit)="onSubmit(isEdit)">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" [(ngModel)]="user.name" name="name"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" class="form-control" [(ngModel)]="user.email" name="email"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone</label>
-                        <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone"/>
-                    </div>
-                    <input type="submit" value="{{isEdit ? 'Update' : 'Submit'}}" class="btn {{isEdit ? 'btn-primary' : 'btn-success'}}" />
-                    <input *ngIf="isEdit" type="button" value="Cancel" class="btn btn-default" (click)="onCancelEdit()" />
-                </form>
-                <br/>
-                <ul class="list-group">
-                    <li class="list-group-item" *ngFor="let user of users">
-                        {{ user.name }} &nbsp;&nbsp; <small><strong>{{user.email}}</strong> - [{{user.phone}}]</small>
+            <form (submit)="onSubmit(isEdit)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.name" name="name"/>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.email" name="email"/>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone"/>
+                </div>
+                <input type="submit" value="{{isEdit ? 'Update' : 'Submit'}}" class="btn {{isEdit ? 'btn-primary' : 'btn-success'}}" />
+                <input *ngIf="isEdit" type="button" value="Cancel" class="btn btn-default" (click)="onCancelEdit()" />
+            </form>
+            <br/>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let user of users">
+                    {{ user.name }} &nbsp;&nbsp; <small><strong>{{user.email}}</strong> - [{{user.phone}}]</small>
 
-                        <div class="ml-auto">
-                            <button type="button" class="btn btn-primary btn-sm" (click)="onEdit(user)">
-                                <i class="fa fa-pencil"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger btn-sm" (click)="onDelete(user.id)">
-                                <i class="fa fa-trash-o"></i>
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                    <div class="ml-auto">
+                        <button type="button" class="btn btn-primary btn-sm" (click)="onEdit(user)">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" (click)="onDelete(user.id)">
+                            <i class="fa fa-trash-o"></i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
         </div>
     `
 })
