@@ -14,7 +14,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent },
-    {path: 'about', component: AboutComponent}
+    {path: 'about', component: AboutComponent},
+    {path: 'sandbox', component: SandboxComponent}
 ];
 
 @NgModule({
